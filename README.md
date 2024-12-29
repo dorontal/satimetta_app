@@ -1,23 +1,38 @@
-# My Personal Website
+# sv
 
-This repository contains the source code and content for my personal website. The website includes my resume, links to videos, my blog, and an FAQ. Below is information about how you may use the materials in this repository.
+Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
-## License
+## Creating a project
 
-This repository uses a dual-license approach:
+If you're seeing this, you've probably already done this step. Congrats!
 
-1. **Software Code**: The source code in this repository is licensed under the [GNU General Public License v3.0 (GPL-3.0)](https://www.gnu.org/licenses/gpl-3.0.en.html). This means you are free to use, modify, and distribute the code as long as your derivative works are also licensed under the GPL-3.0.
+```bash
+# create a new project in the current directory
+npx sv create
 
-2. **Non-Code Content**: The non-code content (such as the resume, blog posts, FAQ, and other written or multimedia content) is licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/). You may share and adapt this content for non-commercial purposes, provided proper credit is given.
+# create a new project in my-app
+npx sv create my-app
+```
 
-For more details, please see the `LICENSE` file in the root of this repository.
+## Developing
 
-## Attribution
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
 
-If you use any of the content from this repository, please provide attribution as follows:
-- Author: Doron
-- Link to this repository: [GitHub Repo Link Here]
+```bash
+npm run dev
 
-## Questions or Feedback?
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
+```
 
-Feel free to reach out if you have any questions or would like to collaborate!
+## Building
+
+To create a production version of your app:
+
+```bash
+npm run build
+```
+
+You can preview the production build with `npm run preview`.
+
+> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

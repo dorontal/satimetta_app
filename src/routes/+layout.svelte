@@ -1,0 +1,75 @@
+<script lang="ts">
+	import '../app.css';
+	import { AppBar } from '@skeletonlabs/skeleton-svelte';
+	import { Switch } from '@skeletonlabs/skeleton-svelte';
+	import { onMount } from 'svelte';
+	import IconMenu from 'lucide-svelte/icons/menu';
+	import IconMoon from 'lucide-svelte/icons/moon';
+	import IconSun from 'lucide-svelte/icons/sun';
+
+	let darkMode = $state(false);
+
+	const setBodyDarkMode = (darkMode: boolean) => {
+		if (darkMode) {
+			document.documentElement.classList.add('dark');
+		} else {
+			document.documentElement.classList.remove('dark');
+		}
+	};
+
+	onMount(() => {
+		const storedDarkMode = localStorage.getItem('darkMode');
+		console.log('onMount(): storedDarkMode = ' + storedDarkMode);
+		if (!storedDarkMode) {
+			darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+		} else {
+			darkMode = storedDarkMode === 'true';
+		}
+		setBodyDarkMode(darkMode);
+	});
+
+	function toggleDarkMode() {
+		darkMode = !darkMode;
+		localStorage.setItem('darkMode', JSON.stringify(darkMode, null, 2));
+		setBodyDarkMode(darkMode);
+	}
+
+	let { children } = $props();
+</script>
+
+<div class="grid h-screen grid-rows-[auto_1fr_auto]">
+	<!-- Header -->
+	<header class="sticky top-0 z-100">
+		<AppBar>
+			{#snippet lead()}
+				<button type="button" class="btn-icon sm:block md:hidden"><IconMenu size="24" /></button>
+			{/snippet}
+			{#snippet trail()}
+				<Switch
+					name="mode"
+					controlActive="bg-surface-200"
+					bind:checked={darkMode}
+					onCheckedChange={toggleDarkMode}
+				>
+					{#snippet inactiveChild()}<IconMoon size="14" />{/snippet}
+					{#snippet activeChild()}<IconSun size="14" />{/snippet}
+				</Switch>
+			{/snippet}
+			<span class="h5">Mindfulness Cultivation</span>
+		</AppBar>
+	</header>
+	<!-- Grid Columns -->
+	<div class="grid grid-cols-1 md:grid-cols-[auto_1fr]">
+		<!-- Left Sidebar. -->
+		<aside class="hidden bg-yellow-500 p-4 md:block">(sidebar)</aside>
+		<!-- Main Content -->
+		<main class="space-y-4 bg-green-500 p-4">
+			{@render children()}
+			<p class="h-[512px] bg-purple-500 p-4">Paragraph 1</p>
+			<p class="h-[512px] bg-purple-500 p-4">Paragraph 2</p>
+			<p class="h-[512px] bg-purple-500 p-4">Paragraph 3</p>
+		</main>
+	</div>
+	<!-- Footer -->
+	<footer class="bg-blue-500 p-4">(footer)</footer>
+</div>
