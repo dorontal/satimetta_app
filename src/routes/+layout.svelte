@@ -55,7 +55,7 @@
 					{#snippet activeChild()}<IconSun size="14" />{/snippet}
 				</Switch>
 			{/snippet}
-			<span class="h5">Mindfulness Cultivation</span>
+			<span class="h4">Mindfulness Cultivation</span>
 		</AppBar>
 	</header>
 	<!-- Grid Columns -->
@@ -63,13 +63,10 @@
 		<!-- Left Sidebar. -->
 		<aside class="hidden bg-yellow-500 p-4 md:block">(sidebar)</aside>
 		<!-- Main Content -->
-		<main class="space-y-4 bg-green-500 p-4">
+		<main class="space-y-4 p-4">
 			{@render children()}
-			<p class="h-[512px] bg-purple-500 p-4">Paragraph 1</p>
-			<p class="h-[512px] bg-purple-500 p-4">Paragraph 2</p>
-			<p class="h-[512px] bg-purple-500 p-4">Paragraph 3</p>
 		</main>
 	</div>
 	<!-- Footer -->
-	<footer class="bg-blue-500 p-4">(footer)</footer>
+	<!--footer class="bg-surface-300 p-4">(footer)</footer-->
 </div>
