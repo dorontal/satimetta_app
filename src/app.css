@@ -11,9 +11,9 @@ dt {
 }
 
 dd {
-    @apply opacity-60;
+    @apply opacity-80;
 }
 
 dl {
-    @apply space-y-2;
+    @apply space-y-3;
 }

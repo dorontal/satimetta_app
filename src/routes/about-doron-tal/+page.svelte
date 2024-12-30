@@ -11,7 +11,7 @@
 	<meta name="description" content="About Doron Tal" />
 </svelte:head>
 
-<h3 class="h3">About Doron Tal</h3>
+<h4 class="h4">About Doron Tal</h4>
 <Accordion {value} multiple>
 	<Accordion.Item value="practice">
 		{#snippet lead()}<Diamond size={14} />{/snippet}
@@ -233,7 +233,7 @@
 					<dd>
 						With advisor <a href="https://en.wikipedia.org/wiki/Eric_L._Schwartz"
 							>Eric L. Schwartz</a
-						> at Boston University's Department of Cognitive and Neural Systems.
+						> at Boston University.
 					</dd>
 				</div>
 				<div>
