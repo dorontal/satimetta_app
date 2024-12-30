@@ -55,7 +55,7 @@
 					{#snippet activeChild()}<IconSun size="14" />{/snippet}
 				</Switch>
 			{/snippet}
-			<span class="h4">Mindfulness Cultivation</span>
+			<span class="h4">Mindfuless Cultivation</span>
 		</AppBar>
 	</header>
 	<!-- Grid Columns -->
