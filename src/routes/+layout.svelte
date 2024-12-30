@@ -42,7 +42,7 @@
 	<header class="sticky top-0 z-100">
 		<AppBar>
 			{#snippet lead()}
-				<button type="button" class="btn-icon sm:block md:hidden"><IconMenu size="24" /></button>
+				<button type="button" class="btn-icon sm:block md:hidden h-full"><IconMenu size="24" /></button>
 			{/snippet}
 			{#snippet trail()}
 				<Switch
