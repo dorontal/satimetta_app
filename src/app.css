@@ -13,3 +13,7 @@ dt {
 dl {
     @apply space-y-3;
 }
+
+ul {
+    @apply list-disc pl-6 space-y-1;
+}
