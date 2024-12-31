@@ -10,10 +10,6 @@ dt {
     @apply font-bold;
 }
 
-dd {
-    @apply opacity-70;
-}
-
 dl {
     @apply space-y-3;
 }

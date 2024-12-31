@@ -39,10 +39,12 @@
 
 <div class="grid h-screen grid-rows-[auto_1fr_auto]">
 	<!-- Header -->
-	<header class="sticky top-0 z-100">
+	<header class="z-100 sticky top-0">
 		<AppBar>
 			{#snippet lead()}
-				<button type="button" class="btn-icon sm:block md:hidden h-full"><IconMenu size="24" /></button>
+				<button type="button" class="btn-icon h-full sm:block md:hidden"
+					><IconMenu size="24" /></button
+				>
 			{/snippet}
 			{#snippet trail()}
 				<Switch
@@ -55,7 +57,7 @@
 					{#snippet activeChild()}<IconSun size="14" />{/snippet}
 				</Switch>
 			{/snippet}
-			<span class="h4">Mindfuless Cultivation</span>
+			<h6 class="h6">Mindfuless Cultivation</h6>
 		</AppBar>
 	</header>
 	<!-- Grid Columns -->
