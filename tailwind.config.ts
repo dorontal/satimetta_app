@@ -16,7 +16,8 @@ export default {
     skeleton({
       // NOTE: each theme included will increase the size of your CSS bundle
       themes: [
-/*      themes.catppuccin,
+        /* 
+        themes.catppuccin,
         themes.cerberus, 
         themes.concord,
         themes.crimson,
@@ -30,14 +31,17 @@ export default {
         themes.nouveau,
         themes.pine,
         themes.reign,
-        themes.rocket, */
-        themes.rose,
-/*      themes.sahara,
+        themes.rocket, 
+        */
+        themes.rose
+        /*
+        themes.sahara,
         themes.seafoam,
         themes.terminus,
         themes.vintage,
         themes.vox,
-        themes.wintry */      ]
+        themes.wintry 
+        */      ]
     })
   ]
 } satisfies Config
