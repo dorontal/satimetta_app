@@ -11,8 +11,8 @@
 	<meta name="description" content="About Doron Tal" />
 </svelte:head>
 
-<h4 class="h4">About Doron Tal</h4>
-<Accordion {value} multiple classes="opacity-90">
+<h6 class="h6">About Doron Tal</h6>
+<Accordion {value} multiple classes="opacity-70">
 	<Accordion.Item value="practice">
 		{#snippet lead()}<Diamond size={14} />{/snippet}
 		{#snippet control()}Practice{/snippet}

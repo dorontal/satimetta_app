@@ -4,6 +4,7 @@
 	import { Switch } from '@skeletonlabs/skeleton-svelte';
 	import { onMount } from 'svelte';
 	import IconMenu from 'lucide-svelte/icons/menu';
+	import IconSunMoon from 'lucide-svelte/icons/sun-moon';
 	import IconMoon from 'lucide-svelte/icons/moon';
 	import IconSun from 'lucide-svelte/icons/sun';
 
@@ -19,7 +20,7 @@
 
 	onMount(() => {
 		const storedDarkMode = localStorage.getItem('darkMode');
-		console.log('onMount(): storedDarkMode = ' + storedDarkMode);
+		// console.log('onMount(): storedDarkMode = ' + storedDarkMode);
 		if (!storedDarkMode) {
 			darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		} else {
@@ -40,7 +41,7 @@
 <div class="grid h-screen grid-rows-[auto_1fr_auto]">
 	<!-- Header -->
 	<header class="z-100 sticky top-0">
-		<AppBar>
+		<!--AppBar>
 			{#snippet lead()}
 				<button type="button" class="btn-icon h-full sm:block md:hidden"
 					><IconMenu size="24" /></button
@@ -58,7 +59,19 @@
 				</Switch>
 			{/snippet}
 			<h6 class="h6">Mindfuless Cultivation</h6>
-		</AppBar>
+		</AppBar-->
+		<div class="flex flex-row items-center p-2 bg-surface-100-900">
+			<div class="flex flex-1">
+				<button type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
+			</div>
+			<div class="flex flex-auto justify-center">
+				<span class="h6">Mindfuless Cultivation</span>
+			</div>
+			<div class="flex flex-1">
+				<span class="ml-auto"></span>
+				<button onclick={toggleDarkMode} type="button" class="btn-icon"><IconSunMoon size="24" /></button>
+			</div>
+		</div>
 	</header>
 	<!-- Grid Columns -->
 	<div class="grid grid-cols-1 md:grid-cols-[auto_1fr]">
