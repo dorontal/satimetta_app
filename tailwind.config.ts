@@ -32,13 +32,12 @@ export default {
         themes.reign,
         themes.rocket, */
         themes.rose,
-/*         themes.sahara,
+/*      themes.sahara,
         themes.seafoam,
         themes.terminus,
         themes.vintage,
         themes.vox,
-        themes.wintry
- */      ]
+        themes.wintry */      ]
     })
   ]
 } satisfies Config
