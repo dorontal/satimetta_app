@@ -60,17 +60,14 @@
 			{/snippet}
 			<h6 class="h6">Mindfuless Cultivation</h6>
 		</AppBar-->
-		<div class="flex flex-row items-center p-2 bg-surface-100-900">
-			<div class="flex flex-1">
-				<button type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
-			</div>
+		<div class="flex items-center p-2 bg-surface-100-900">
+			<button type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
 			<div class="flex flex-auto justify-center">
-				<span class="h6">Mindfuless Cultivation</span>
+				<span class="h6">Mindfulness Cultivation</span>
 			</div>
-			<div class="flex flex-1">
-				<span class="ml-auto"></span>
-				<button onclick={toggleDarkMode} type="button" class="btn-icon"><IconSunMoon size="24" /></button>
-			</div>
+			<button onclick={toggleDarkMode} type="button" class="btn-icon ml-auto"
+				><IconSunMoon size="24" /></button
+			>
 		</div>
 	</header>
 	<!-- Grid Columns -->

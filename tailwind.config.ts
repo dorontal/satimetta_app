@@ -18,7 +18,9 @@ export default {
       themes: [
         /* 
         themes.catppuccin,
-        themes.cerberus, 
+        */
+        themes.cerberus
+        /*
         themes.concord,
         themes.crimson,
         themes.fennec,
@@ -32,9 +34,7 @@ export default {
         themes.pine,
         themes.reign,
         themes.rocket, 
-        */
-        themes.rose
-        /*
+        themes.rose,
         themes.sahara,
         themes.seafoam,
         themes.terminus,
