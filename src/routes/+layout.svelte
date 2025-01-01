@@ -19,7 +19,6 @@
 
 	onMount(() => {
 		const storedDarkMode = localStorage.getItem('darkMode');
-		// console.log('onMount(): storedDarkMode = ' + storedDarkMode);
 		if (!storedDarkMode) {
 			darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 		} else {
@@ -39,26 +38,7 @@
 
 <div class="grid h-screen grid-rows-[auto_1fr_auto]">
 	<!-- Header -->
-	<header class="z-100 sticky top-0">
-		<!--AppBar>
-			{#snippet lead()}
-				<button type="button" class="btn-icon h-full sm:block md:hidden"
-					><IconMenu size="24" /></button
-				>
-			{/snippet}
-			{#snippet trail()}
-				<Switch
-					name="mode"
-					controlActive="bg-surface-200"
-					bind:checked={darkMode}
-					onCheckedChange={toggleDarkMode}
-				>
-					{#snippet inactiveChild()}<IconMoon size="14" />{/snippet}
-					{#snippet activeChild()}<IconSun size="14" />{/snippet}
-				</Switch>
-			{/snippet}
-			<h6 class="h6">Mindfuless Cultivation</h6>
-		</AppBar-->
+	<header class="z-10 sticky top-0 backdrop-blur-md opacity-70">
 		<div class="flex items-center p-2 bg-surface-100-900">
 			<button type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
 			<div class="flex flex-auto justify-center">
