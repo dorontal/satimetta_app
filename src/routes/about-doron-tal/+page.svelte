@@ -7,8 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>About Doron Tal</title>
-	<meta name="description" content="About Doron Tal" />
+	<meta name="description" content="About Doron Tal / Doron Tal Mindfulness Biography" />
 </svelte:head>
 
 <h6 class="h6">About Doron Tal</h6>

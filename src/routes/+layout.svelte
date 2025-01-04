@@ -48,6 +48,10 @@
 	let { children } = $props();
 </script>
 
+<svelte:head>
+	<title>Mindfulness Cultivation</title>
+</svelte:head>
+
 <div class="flex h-screen flex-col">
 	<!-- Header, spanning the full width -->
 	<header class="z-10 sticky top-0 backdrop-blur-md">

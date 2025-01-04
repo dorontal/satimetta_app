@@ -8,7 +8,6 @@
 </script>
 
 <svelte:head>
-	<title>Mindfulness Resources</title>
 	<meta name="description" content="Mindfulness Resources" />
 </svelte:head>
 

@@ -3,8 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Doron Tal Mindfulness Background" />
+	<meta name="description" content="Mindfulness Cultivation - Doron Tal" />
 </svelte:head>
 
 <section>
