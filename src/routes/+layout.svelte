@@ -52,11 +52,11 @@
 	<!-- Header, spanning the full width -->
 	<header class="z-10 sticky top-0 backdrop-blur-md">
 		<div class="flex items-center p-2 bg-surface-100-900">
-			<button onclick={toggleSidebar} type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
+			<button onclick={toggleSidebar} type="button" class="btn-icon md:hidden ml-1"><IconMenu size="24" /></button>
 			<div class="flex flex-auto justify-center">
 				<span class="h6">Mindfulness Cultivation</span>
 			</div>
-			<button onclick={toggleDarkMode} type="button" class="btn-icon ml-auto"
+			<button onclick={toggleDarkMode} type="button" class="btn-icon ml-auto mr-3"
 				><IconSunMoon size="24" /></button
 			>
 		</div>
