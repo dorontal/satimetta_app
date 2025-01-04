@@ -50,7 +50,7 @@
 
 <div class="flex h-screen flex-col">
 	<!-- Header, spanning the full width -->
-	<header class="z-10 sticky top-0 backdrop-blur-md opacity-70">
+	<header class="z-10 sticky top-0 backdrop-blur-md">
 		<div class="flex items-center p-2 bg-surface-100-900">
 			<button onclick={toggleSidebar} type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
 			<div class="flex flex-auto justify-center">
@@ -64,7 +64,7 @@
 
 	<div class="flex flex-1 overflow-hidden">
 		<!-- Sidebar: Hidden on mobile, visible on lg and up -->
-		<div class="m-0 hidden h-full w-32 overflow-hidden bg-gray-100 p-0 md:block">Sidebar</div>
+		<div class="m-0 hidden h-full w-48 overflow-hidden p-0 md:block bg-orange-500">Sidebar</div>
 
 		<!-- Main content area -->
 		<div class="flex flex-1 flex-col overflow-hidden px-0">
@@ -75,14 +75,14 @@
 	</div>
 
 	<!-- Footer, spanning the full width -->
-	<div class="flex h-16 bg-gray-300 p-4">Footer</div>
+	<!-- footer class="flex h-16 p-4">Footer</footer -->
 
 	<!-- Sidebar drawer (conditionally rendered based on `isSidebarOpen`) -->
 	{#if isSidebarOpen}
-		<div class="fixed inset-0 z-50 bg-gray-800 bg-opacity-50">
-			<div class="absolute left-0 top-0 h-full w-64 bg-gray-100 p-4">
+		<div class="fixed inset-0 z-50 bg-opacity-50">
+			<div class="absolute left-0 top-0 h-full w-48 p-4 bg-yellow-500">
 				Sidebar
-				<button type="button" class="absolute right-4 top-4 text-xl text-gray-700" onclick={closeSidebar}
+				<button type="button" class="absolute right-4 top-4 text-xl" onclick={closeSidebar}
 					>&times;</button
 				>
 			</div>
