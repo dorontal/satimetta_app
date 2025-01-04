@@ -33,14 +33,26 @@
 		setBodyDarkMode(darkMode);
 	}
 
+	let isSidebarOpen = $state(false); // Track the state of the sidebar (open/closed)
+
+	// Function to toggle the sidebar state
+	const toggleSidebar = () => {
+		isSidebarOpen = !isSidebarOpen;
+	};
+
+	// Function to close the sidebar
+	const closeSidebar = () => {
+		isSidebarOpen = false;
+	};
+
 	let { children } = $props();
 </script>
 
-<div class="grid h-screen grid-rows-[auto_1fr_auto]">
-	<!-- Header -->
+<div class="flex h-screen flex-col">
+	<!-- Header, spanning the full width -->
 	<header class="z-10 sticky top-0 backdrop-blur-md opacity-70">
 		<div class="flex items-center p-2 bg-surface-100-900">
-			<button type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
+			<button onclick={toggleSidebar} type="button" class="btn-icon md:hidden"><IconMenu size="24" /></button>
 			<div class="flex flex-auto justify-center">
 				<span class="h6">Mindfulness Cultivation</span>
 			</div>
@@ -49,15 +61,31 @@
 			>
 		</div>
 	</header>
-	<!-- Grid Columns -->
-	<div class="grid grid-cols-1 md:grid-cols-[auto_1fr]">
-		<!-- Left Sidebar. -->
-		<aside class="hidden bg-yellow-500 p-4 md:block">(sidebar)</aside>
-		<!-- Main Content -->
-		<main class="space-y-4 p-4">
-			{@render children()}
-		</main>
+
+	<div class="flex flex-1 overflow-hidden">
+		<!-- Sidebar: Hidden on mobile, visible on lg and up -->
+		<div class="m-0 hidden h-full w-32 overflow-hidden bg-gray-100 p-0 md:block">Sidebar</div>
+
+		<!-- Main content area -->
+		<div class="flex flex-1 flex-col overflow-hidden px-0">
+			<main class="flex-1 overflow-y-auto p-4">
+				{@render children()}
+			</main>
+		</div>
 	</div>
-	<!-- Footer -->
-	<!--footer class="bg-surface-300 p-4">(footer)</footer-->
-</div>
+
+	<!-- Footer, spanning the full width -->
+	<div class="flex h-16 bg-gray-300 p-4">Footer</div>
+
+	<!-- Sidebar drawer (conditionally rendered based on `isSidebarOpen`) -->
+	{#if isSidebarOpen}
+		<div class="fixed inset-0 z-50 bg-gray-800 bg-opacity-50">
+			<div class="absolute left-0 top-0 h-full w-64 bg-gray-100 p-4">
+				Sidebar
+				<button type="button" class="absolute right-4 top-4 text-xl text-gray-700" onclick={closeSidebar}
+					>&times;</button
+				>
+			</div>
+		</div>
+	{/if}
+	</div>
