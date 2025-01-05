@@ -3,6 +3,7 @@
 	import { onMount } from 'svelte';
 	import IconMenu from 'lucide-svelte/icons/menu';
 	import IconSunMoon from 'lucide-svelte/icons/sun-moon';
+	import Sidebar from './Sidebar.svelte';
 
 	// enable site-wide pre-rendering of pages
 	export const prerender = true;
@@ -68,7 +69,9 @@
 
 	<div class="flex flex-1 overflow-hidden">
 		<!-- Sidebar: Hidden on mobile, visible on lg and up -->
-		<div class="m-0 hidden h-full w-48 overflow-hidden p-0 md:block bg-orange-500">Sidebar</div>
+		<div class="m-0 hidden h-full w-48 overflow-hidden p-0 md:block bg-orange-500">
+<Sidebar />
+		</div>
 
 		<!-- Main content area -->
 		<div class="flex flex-1 flex-col overflow-hidden px-0">
@@ -84,8 +87,9 @@
 	<!-- Sidebar drawer (conditionally rendered based on `isSidebarOpen`) -->
 	{#if isSidebarOpen}
 		<div class="fixed inset-0 z-50 bg-opacity-50">
-			<div class="absolute left-0 top-0 h-full w-48 p-4 bg-yellow-500">
-				Sidebar
+			<div class="absolute left-0 top-0 h-full w-48 p-4 bg-yellow-500 md:hidden">
+				<Sidebar />
+				<!-- button below closes sidebar: replace with click to close -->
 				<button type="button" class="absolute right-4 top-4 text-xl" onclick={closeSidebar}
 					>&times;</button
 				>
