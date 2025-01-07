@@ -5,9 +5,6 @@
 	import IconSunMoon from 'lucide-svelte/icons/sun-moon';
 	import Sidebar from './Sidebar.svelte';
 
-	// enable site-wide pre-rendering of pages
-	export const prerender = true;
-
 	let darkMode = $state(false);
 
 	const setBodyDarkMode = (darkMode: boolean) => {
@@ -40,12 +37,7 @@
 	const toggleSidebar = () => {
 		isSidebarOpen = !isSidebarOpen;
 	};
-
-	// Function to close the sidebar
-	const closeSidebar = () => {
-		isSidebarOpen = false;
-	};
-
+    
 	let { children } = $props();
 </script>
 
@@ -54,23 +46,27 @@
 </svelte:head>
 
 <div class="flex h-screen flex-col">
-	<!-- Header, spanning the full width -->
-	<header class="z-10 sticky top-0 backdrop-blur-md">
+	<!-- Header -->
+	<header class="sticky top-0 z-10 backdrop-blur-md" role="heading" aria-level="1">
 		<div class="flex items-center p-2 bg-surface-100-900">
-			<button onclick={toggleSidebar} type="button" class="btn-icon md:hidden ml-1"><IconMenu size="24" /></button>
+			<button onclick={toggleSidebar} type="button" class="btn-icon ml-1 md:hidden">
+				<IconMenu size="24" />
+			</button>
 			<div class="flex flex-auto justify-center">
 				<span class="h6">Mindfulness Cultivation</span>
 			</div>
-			<button onclick={toggleDarkMode} type="button" class="btn-icon ml-auto mr-3"
-				><IconSunMoon size="24" /></button
-			>
+			<button onclick={toggleDarkMode} type="button" class="btn-icon ml-auto mr-3">
+				<IconSunMoon size="24" />
+			</button>
 		</div>
 	</header>
 
 	<div class="flex flex-1 overflow-hidden">
-		<!-- Sidebar: Hidden on mobile, visible on lg and up -->
-		<div class="m-0 hidden h-full w-48 overflow-hidden p-0 md:block bg-orange-500">
-<Sidebar />
+		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
+		<div
+			class={`h-full w-48 p-0 bg-orange-500 ${isSidebarOpen ? 'block' : 'hidden'} md:block`}
+		>
+			<Sidebar />
 		</div>
 
 		<!-- Main content area -->
@@ -80,20 +76,4 @@
 			</main>
 		</div>
 	</div>
-
-	<!-- Footer, spanning the full width -->
-	<!-- footer class="flex h-16 p-4">Footer</footer -->
-
-	<!-- Sidebar drawer (conditionally rendered based on `isSidebarOpen`) -->
-	{#if isSidebarOpen}
-		<div class="fixed inset-0 z-50 bg-opacity-50">
-			<div class="absolute left-0 top-0 h-full w-48 p-4 bg-yellow-500 md:hidden">
-				<Sidebar />
-				<!-- button below closes sidebar: replace with click to close -->
-				<button type="button" class="absolute right-4 top-4 text-xl" onclick={closeSidebar}
-					>&times;</button
-				>
-			</div>
-		</div>
-	{/if}
-	</div>
+</div>
