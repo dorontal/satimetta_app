@@ -67,7 +67,7 @@
 
 	<div class="flex flex-1 overflow-hidden">
 		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
-		<div class={`h-full w-48 bg-orange-500 p-0 ${isSidebarOpen ? 'block' : 'hidden'} md:block`}>
+		<div class={`h-full w-48 bg-surface-200-800 p-0 ${isSidebarOpen ? 'block' : 'hidden'} md:block`}>
 			<Sidebar />
 		</div>
 
