@@ -37,7 +37,7 @@
 	const toggleSidebar = () => {
 		isSidebarOpen = !isSidebarOpen;
 	};
-    
+
 	let { children } = $props();
 </script>
 
@@ -47,8 +47,8 @@
 
 <div class="flex h-screen flex-col">
 	<!-- Header -->
-	<header class="sticky top-0 z-10 backdrop-blur-md" role="heading" aria-level="1">
-		<div class="flex items-center p-2 bg-surface-100-900">
+	<header class="sticky top-0 z-10 backdrop-blur-md bg-surface-100-900" role="heading" aria-level="1">
+		<div class="flex h-14 items-center p-2">
 			<button onclick={toggleSidebar} type="button" class="btn-icon ml-1 md:hidden">
 				<IconMenu size="24" />
 			</button>
@@ -63,9 +63,7 @@
 
 	<div class="flex flex-1 overflow-hidden">
 		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
-		<div
-			class={`h-full w-48 p-0 bg-orange-500 ${isSidebarOpen ? 'block' : 'hidden'} md:block`}
-		>
+		<div class={`h-full w-48 bg-orange-500 p-0 ${isSidebarOpen ? 'block' : 'hidden'} md:block`}>
 			<Sidebar />
 		</div>
 
