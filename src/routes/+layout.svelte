@@ -3,6 +3,8 @@
 	import { page } from '$app/state';
 	import { Navigation } from '@skeletonlabs/skeleton-svelte';
 	import { onMount } from 'svelte';
+	import { beforeNavigate } from '$app/navigation';
+
 	import IconMenu from 'lucide-svelte/icons/menu';
 	import IconSunMoon from 'lucide-svelte/icons/sun-moon';
 	import IconHome from 'lucide-svelte/icons/home';
@@ -49,6 +51,10 @@
 		}
 	};
 
+	beforeNavigate(({ from, to }) => {
+		closeSidebar();
+	});
+
 	let { children } = $props();
 </script>
 
@@ -81,7 +87,10 @@
 		<div
 			role="button"
 			tabindex="0"
-			onclick={closeSidebar}
+			onclick={(e) => {
+				e.stopPropagation();
+				closeSidebar();
+			}}
 			onkeyup={() => null}
 			class="fixed inset-0 bg-gray-800 bg-opacity-50 md:hidden"
 			class:opacity-0={isSidebarOpen === false}
@@ -131,7 +140,10 @@
 		<div
 			role="button"
 			tabindex="0"
-			onclick={closeSidebar}
+			onclick={(e) => {
+				e.stopPropagation();
+				closeSidebar();
+			}}
 			onkeyup={() => null}
 			class="flex flex-1 flex-col overflow-hidden px-0"
 		>
