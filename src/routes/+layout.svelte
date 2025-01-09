@@ -55,6 +55,19 @@
 		closeSidebar();
 	});
 
+	// Get the header text based on the current URL path
+	function getHeaderText() {
+		const path = page.url.pathname;
+		if (path === '/') {
+			return 'Mindfulness Cultivation';
+		} else if (path === '/about-doron-tal') {
+			return 'Doron Tal - Background';
+		} else if (path === '/resources') {
+			return 'Mindfulness Resources';
+		}
+		return 'Mindfulness Cultivation'; // Default text
+	}
+
 	let { children } = $props();
 </script>
 
@@ -74,7 +87,8 @@
 				<IconMenu size="24" />
 			</button>
 			<div class="flex flex-auto justify-center">
-				<span class="h6">Mindfulness Cultivation</span>
+				<!-- Dynamically display the header text -->
+				<span class="h6">{getHeaderText()}</span>
 			</div>
 			<button onclick={toggleDarkMode} type="button" class="btn-icon ml-auto mr-3">
 				<IconSunMoon size="24" />
