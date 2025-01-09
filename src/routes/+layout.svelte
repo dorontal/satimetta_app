@@ -45,14 +45,15 @@
 	};
 
 	// Function to close the sidebar when the backdrop is clicked (for mobile)
-	const closeSidebar = () => {
-		if (window.innerWidth < 768) {
+	const closeSidebar = (e: Event) => {
+		if (isSidebarOpen && window.innerWidth < 768) {
+			e.stopPropagation();
 			isSidebarOpen = false;
 		}
 	};
 
 	beforeNavigate(({ from, to }) => {
-		closeSidebar();
+		isSidebarOpen = false;
 	});
 
 	// Get the header text based on the current URL path
@@ -101,14 +102,11 @@
 		<div
 			role="button"
 			tabindex="0"
-			onclick={(e) => {
-				e.stopPropagation();
-				closeSidebar();
-			}}
+			onclick={closeSidebar}
 			onkeyup={() => null}
 			class="fixed inset-0 bg-gray-800 bg-opacity-50 md:hidden"
 			class:opacity-0={isSidebarOpen === false}
-			class:opacity-300={isSidebarOpen && window.innerWidth < 768}
+			class:opacity-50={isSidebarOpen && window.innerWidth < 768}
 		></div>
 
 		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
@@ -154,10 +152,7 @@
 		<div
 			role="button"
 			tabindex="0"
-			onclick={(e) => {
-				e.stopPropagation();
-				closeSidebar();
-			}}
+			onclick={closeSidebar}
 			onkeyup={() => null}
 			class="flex flex-1 flex-col overflow-hidden px-0"
 		>
