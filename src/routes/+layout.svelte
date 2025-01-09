@@ -101,7 +101,7 @@
 		<!-- Semi-transparent backdrop when sidebar is open and screen is small -->
 		<div
 			role="button"
-			tabindex="0"
+			tabindex="-1"
 			onclick={closeSidebar}
 			onkeyup={() => null}
 			class="fixed inset-0 bg-gray-800 bg-opacity-50 md:hidden"
@@ -151,7 +151,7 @@
 		<!-- Main content area -->
 		<div
 			role="button"
-			tabindex="0"
+			tabindex="-1"
 			onclick={closeSidebar}
 			onkeyup={() => null}
 			class="flex flex-1 flex-col overflow-hidden px-0"
