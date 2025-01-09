@@ -69,7 +69,14 @@
 		</div>
 	</header>
 
-	<div class="flex flex-1 overflow-hidden">
+	<div class="flex flex-1 overflow-hidden relative">
+		<!-- Semi-transparent backdrop when sidebar is open and screen is small -->
+		<div
+			class="fixed inset-0 bg-gray-800 bg-opacity-50 md:hidden"
+			class:opacity-0={isSidebarOpen === false}
+			class:opacity-300={isSidebarOpen && window.innerWidth < 768}
+		></div>
+
 		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
 		<aside
 			class="p-0 bg-surface-100-900 md:block {isSidebarOpen
