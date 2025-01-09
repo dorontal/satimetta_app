@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<meta name="description" content="Mindfulness Resources" />
+	<meta name="description" content="Mindfulness Questions and Answers / Mindfulness Q&A / Mindfulness Frequently Asked Questions / Mindfulness FAQ" />
 </svelte:head>
 
 <Accordion {value} multiple classes="opacity-70">
@@ -316,3 +316,4 @@
 		{/snippet}
 	</Accordion.Item>
 </Accordion>
+
