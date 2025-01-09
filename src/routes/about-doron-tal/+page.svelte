@@ -1,8 +1,7 @@
 <script lang="ts">
 	import { Accordion } from '@skeletonlabs/skeleton-svelte';
 	import Diamond from 'lucide-svelte/icons/diamond';
-
-	// State
+	// State - provides 'value' needed for accordion
 	const value = $state([]);
 </script>
 
