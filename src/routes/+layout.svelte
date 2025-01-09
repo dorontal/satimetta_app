@@ -3,7 +3,11 @@
 	import { onMount } from 'svelte';
 	import IconMenu from 'lucide-svelte/icons/menu';
 	import IconSunMoon from 'lucide-svelte/icons/sun-moon';
-	import Sidebar from './Sidebar.svelte';
+	// import Sidebar from './Sidebar.svelte';
+	import { Navigation } from '@skeletonlabs/skeleton-svelte';
+	import IconHome from 'lucide-svelte/icons/home';
+	import IconInfo from 'lucide-svelte/icons/info';
+	import IconLink from 'lucide-svelte/icons/link';
 
 	let darkMode = $state(false);
 
@@ -68,7 +72,23 @@
 	<div class="flex flex-1 overflow-hidden">
 		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
 		<aside class="p-0 bg-surface-100-900 {isSidebarOpen ? 'block' : 'hidden'} md:block">
-			<Sidebar />
+			<!--Sidebar /-->
+			<div>
+				<!-- without the <div>, <Navigation.Rail> shows up in the center of the sidebar -->
+				<Navigation.Rail expanded>
+					{#snippet tiles()}
+						<Navigation.Tile id="0" labelExpanded="Home" href="/">
+							<IconHome />
+						</Navigation.Tile>
+						<Navigation.Tile id="1" labelExpanded="Background" href="/about-doron-tal">
+							<IconInfo />
+						</Navigation.Tile>
+						<Navigation.Tile id="2" labelExpanded="Resources" href="/resources">
+							<IconLink />
+						</Navigation.Tile>
+					{/snippet}
+				</Navigation.Rail>
+			</div>
 		</aside>
 
 		<!-- Main content area -->
