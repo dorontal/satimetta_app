@@ -48,7 +48,7 @@
 <div class="flex h-screen flex-col">
 	<!-- Header -->
 	<header
-		class="sticky top-0 z-10 backdrop-blur-md bg-surface-100-900"
+		class="sticky top-0 z-10 backdrop-blur-md bg-surface-200-800"
 		role="heading"
 		aria-level="1"
 	>
@@ -67,9 +67,9 @@
 
 	<div class="flex flex-1 overflow-hidden">
 		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
-		<div class={`h-full w-48 bg-surface-200-800 p-0 ${isSidebarOpen ? 'block' : 'hidden'} md:block`}>
+		<aside class="p-0 bg-surface-100-900 {isSidebarOpen ? 'block' : 'hidden'} md:block">
 			<Sidebar />
-		</div>
+		</aside>
 
 		<!-- Main content area -->
 		<div class="flex flex-1 flex-col overflow-hidden px-0">
