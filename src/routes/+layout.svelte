@@ -71,10 +71,13 @@
 
 	<div class="flex flex-1 overflow-hidden">
 		<!-- Sidebar: Always visible on larger screens, toggled on mobile -->
-		<aside class="p-0 bg-surface-100-900 {isSidebarOpen ? 'block' : 'hidden'} md:block">
-			<!--Sidebar /-->
+		<aside
+			class="p-0 bg-surface-100-900 md:block {isSidebarOpen
+				? 'fixed left-0 top-14 z-20 w-64'
+				: 'hidden'} md:relative"
+		>
+			<!-- div below to put nav rails on top & prevent them from being vertically centered-->
 			<div>
-				<!-- without the <div>, <Navigation.Rail> shows up in the center of the sidebar -->
 				<Navigation.Rail expanded>
 					{#snippet tiles()}
 						<Navigation.Tile id="0" labelExpanded="Home" href="/">
