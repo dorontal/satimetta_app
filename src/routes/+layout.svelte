@@ -10,6 +10,7 @@
 	import IconHome from 'lucide-svelte/icons/home';
 	import IconInfo from 'lucide-svelte/icons/info';
 	import IconLink from 'lucide-svelte/icons/link';
+	import CircleHelp from 'lucide-svelte/icons/circle-help';
 
 	let darkMode = $state(false);
 
@@ -65,6 +66,8 @@
 			return 'Doron Tal - Background';
 		} else if (path === '/mindfulness-resources') {
 			return 'Mindfulness Resources';
+		} else if (path === '/mindfulness-questions-and-answers') {
+			return 'Mindfulness Q&A';
 		}
 		return 'Mindfulness Cultivation'; // Default text
 	}
@@ -142,6 +145,14 @@
 							selected={page.url.pathname === '/mindfulness-resources'}
 						>
 							<IconLink />
+						</Navigation.Tile>
+						<Navigation.Tile
+							id="3"
+							labelExpanded="Mindfulness Q&A"
+							href="/mindfulness-questions-and-answers"
+							selected={page.url.pathname === '/mindfulness-questions-and-answers'}
+						>
+							<CircleHelp />
 						</Navigation.Tile>
 					{/snippet}
 				</Navigation.Rail>
