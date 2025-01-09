@@ -11,7 +11,6 @@
 	<meta name="description" content="Mindfulness Resources" />
 </svelte:head>
 
-<h6 class="h6">Mindfulness Resources</h6>
 <Accordion {value} multiple classes="opacity-70">
 	<Accordion.Item value="guided-body-scans">
 		{#snippet lead()}<Diamond size={14} />{/snippet}

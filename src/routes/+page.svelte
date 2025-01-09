@@ -18,7 +18,7 @@
 			for thousands of years and now supported by both traditional wisdom and modern science. Here,
 			you'll find Doron Tal's related <a href="/about-doron-tal">background</a>
 			and curated
-			<a href="/resources">resources</a> to help you cultivate these qualities in daily
+			<a href="/mindfulness-resources">resources</a> to help you cultivate these qualities in daily
 			life and to support ongoing instruction.
 		</p>
 	</div>

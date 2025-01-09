@@ -62,7 +62,7 @@
 			return 'Mindfulness Cultivation';
 		} else if (path === '/about-doron-tal') {
 			return 'Doron Tal - Background';
-		} else if (path === '/resources') {
+		} else if (path === '/mindfulness-resources') {
 			return 'Mindfulness Resources';
 		}
 		return 'Mindfulness Cultivation'; // Default text
@@ -140,8 +140,8 @@
 						<Navigation.Tile
 							id="2"
 							labelExpanded="Resources"
-							href="/resources"
-							selected={page.url.pathname === '/resources'}
+							href="/mindfulness-resources"
+							selected={page.url.pathname === '/mindfulness-resources'}
 						>
 							<IconLink />
 						</Navigation.Tile>

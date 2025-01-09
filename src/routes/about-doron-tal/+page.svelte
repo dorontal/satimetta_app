@@ -10,7 +10,6 @@
 	<meta name="description" content="About Doron Tal / Doron Tal Mindfulness Biography" />
 </svelte:head>
 
-<h6 class="h6">About Doron Tal</h6>
 <Accordion {value} multiple classes="opacity-70">
 	<Accordion.Item value="practice">
 		{#snippet lead()}<Diamond size={14} />{/snippet}
