@@ -1,10 +1,10 @@
 <script lang="ts">
 	import '../app.css';
+	import { page } from '$app/state';
+	import { Navigation } from '@skeletonlabs/skeleton-svelte';
 	import { onMount } from 'svelte';
 	import IconMenu from 'lucide-svelte/icons/menu';
 	import IconSunMoon from 'lucide-svelte/icons/sun-moon';
-	// import Sidebar from './Sidebar.svelte';
-	import { Navigation } from '@skeletonlabs/skeleton-svelte';
 	import IconHome from 'lucide-svelte/icons/home';
 	import IconInfo from 'lucide-svelte/icons/info';
 	import IconLink from 'lucide-svelte/icons/link';
@@ -80,13 +80,28 @@
 			<div>
 				<Navigation.Rail expanded>
 					{#snippet tiles()}
-						<Navigation.Tile id="0" labelExpanded="Home" href="/">
+						<Navigation.Tile
+							id="0"
+							labelExpanded="Home"
+							href="/"
+							selected={page.url.pathname === '/'}
+						>
 							<IconHome />
 						</Navigation.Tile>
-						<Navigation.Tile id="1" labelExpanded="Background" href="/about-doron-tal">
+						<Navigation.Tile
+							id="1"
+							labelExpanded="Background"
+							href="/about-doron-tal"
+							selected={page.url.pathname === '/about-doron-tal'}
+						>
 							<IconInfo />
 						</Navigation.Tile>
-						<Navigation.Tile id="2" labelExpanded="Resources" href="/resources">
+						<Navigation.Tile
+							id="2"
+							labelExpanded="Resources"
+							href="/resources"
+							selected={page.url.pathname === '/resources'}
+						>
 							<IconLink />
 						</Navigation.Tile>
 					{/snippet}
