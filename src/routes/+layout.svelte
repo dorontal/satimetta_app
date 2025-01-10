@@ -3,7 +3,7 @@
 	import { page } from '$app/state';
 	import { Navigation } from '@skeletonlabs/skeleton-svelte';
 	import { onMount } from 'svelte';
-	import { beforeNavigate } from '$app/navigation';
+	import { onNavigate } from '$app/navigation';
 
 	import IconMenu from 'lucide-svelte/icons/menu';
 	import IconSunMoon from 'lucide-svelte/icons/sun-moon';
@@ -53,7 +53,7 @@
 		}
 	};
 
-	beforeNavigate(({ from, to }) => {
+	onNavigate(({ from, to }) => {
 		isSidebarOpen = false;
 	});
 
@@ -109,6 +109,7 @@
 			onkeyup={() => null}
 			class="fixed inset-0 bg-gray-800 bg-opacity-50 md:hidden"
 			class:opacity-0={isSidebarOpen === false}
+			class:hidden={isSidebarOpen === false}
 			class:opacity-50={isSidebarOpen && window.innerWidth < 768}
 		></div>
 
