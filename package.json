@@ -1,6 +1,7 @@
 {
 	"name": "satimetta-app",
-	"private": true,
+	"author": "Doron Tal",
+	"private": false,
 	"version": "0.0.1",
 	"type": "module",
 	"scripts": {
@@ -13,7 +14,8 @@
 		"lint": "prettier --check . && eslint .",
 		"test:unit": "vitest",
 		"test": "npm run test:unit -- --run && npm run test:e2e",
-		"test:e2e": "playwright test"
+		"test:e2e": "playwright test",
+		"deploy": "npx gh-pages -d build --dotfiles"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.4",
