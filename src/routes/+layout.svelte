@@ -132,16 +132,8 @@
 							<IconHome />
 						</Navigation.Tile>
 						<Navigation.Tile
-							id="1"
-							labelExpanded="Background"
-							href="/about-doron-tal"
-							selected={page.url.pathname === '/about-doron-tal'}
-						>
-							<IconInfo />
-						</Navigation.Tile>
-						<Navigation.Tile
 							id="2"
-							labelExpanded="Resources"
+							labelExpanded="Mindfulness Resources"
 							href="/mindfulness-resources"
 							selected={page.url.pathname === '/mindfulness-resources'}
 						>
@@ -154,6 +146,14 @@
 							selected={page.url.pathname === '/mindfulness-questions-and-answers'}
 						>
 							<CircleHelp />
+						</Navigation.Tile>
+						<Navigation.Tile
+							id="1"
+							labelExpanded="About"
+							href="/about-doron-tal"
+							selected={page.url.pathname === '/about-doron-tal'}
+						>
+							<IconInfo />
 						</Navigation.Tile>
 					{/snippet}
 				</Navigation.Rail>
