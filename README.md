@@ -1,40 +1,22 @@
-# sv
+# README.md
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+This is the website of meditation / mindfulness teacher / facilitator
+Doron Tal, located at `satimetta.org`, used to support ongoing instruction.
 
-## Creating a project
+## Development notes
 
-If you're seeing this, you've probably already done this step. Congrats!
+* The initial website was based on the scaffolded Svelte demo app, as
+  created by running `npx sv create satimetta.org`, and then choosing
+  "SvelteKit demo" - the Svelte showcase app
 
-```bash
-# create a new project in the current directory
-npx sv create
+* Using a workflow for automatic github pages deploy, as
+  described here: 
+  ```
+  https://www.captaincodeman.com/deploy-a-sveltekit-app-to-github-pages
+  ```
+* `CHANGELOG.md` contains notes related to the various git tags
 
-# create a new project in my-app
-npx sv create my-app
-```
+### Deploy
 
-## Developing
+* Deploy with the command `yarn run deploy`
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-used: https://github.com/tailwindlabs/tailwindcss/discussions/5258
